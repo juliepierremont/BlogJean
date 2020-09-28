@@ -1,10 +1,6 @@
-Options +FollowSymLinks
-RewriteEngine On
-
-
-RewriteCond %{THE_REQUEST} \s/+public/(\S) [NC]
-RewriteRule ^ /%1 [R=301,NE,L]
-RewriteCond %{REQUEST_URI} !(public|.css)
-RewriteRule ^(.+)$ public/index.php?url=$1 [QSA,L]
-
-RewriteRule ^(?!public/)(.)$ public/$1 [L,NC]
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)=([0-9]+)$ index.php?get=$1&chapter=$2 [L]
+RewriteRule ^(.+)-([0-9]+)$ index.php?get=$1&id=$2 [L]
+RewriteRule ^public/(.+)\.png$ public/$1.png [L]
+RewriteRule ^(.+)$ index.php?get=$1 [QSA,L]

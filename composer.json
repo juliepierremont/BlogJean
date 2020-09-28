@@ -1,8 +1,9 @@
 {
     "autoload": {
       "psr-4": {
-        "App\\src\\": "src/",
-        "App\\Name\\": "public/"
+        "App\\src\\": "src",
+        "App\\classes\\": "classes/",
+        "App\\utils\\":"utils"
       }
     }
   }
