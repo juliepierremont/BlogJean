@@ -11,6 +11,8 @@ class ComposerStaticInitbf94bc19a2c68971adef8b4b01e19062
         array (
             'App\\utils\\' => 10,
             'App\\src\\' => 8,
+            'App\\modele\\' => 11,
+            'App\\controleur\\' => 15,
         ),
     );
 
@@ -22,6 +24,14 @@ class ComposerStaticInitbf94bc19a2c68971adef8b4b01e19062
         'App\\src\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'App\\modele\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/modele',
+        ),
+        'App\\controleur\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/controleur',
         ),
     );
 
