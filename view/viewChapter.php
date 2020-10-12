@@ -7,7 +7,13 @@
 </head>
 
 <body>
+<section class=chapter>
+            <div>
+                <h2><?= htmlspecialchars($articles['title']); ?></h2>
+                
 
+            </div>
+        </section>  
 
 </body>
 
