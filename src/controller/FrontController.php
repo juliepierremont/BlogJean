@@ -21,8 +21,8 @@ class FrontController
         $myView->render(['articles' => $articles]);
     }
 
-    public function getChapters($chapter){
-        $chapter = $this->chapter->getChapter();
+    public function getChapter($chapterID){
+        $chapter = $this->chapter->getChapter($chapterID);
         $myView = new View('viewChapter');
         $myView->render(['chapter' => $chapter]);
     }
