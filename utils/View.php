@@ -18,6 +18,6 @@ class View
         ob_start();
         require_once 'view/' . $file . '.php';
         $content = ob_get_clean();
-        //require_once 'view/gabarit.php';
+        require_once 'view/gabarit.php';
     }
 }
