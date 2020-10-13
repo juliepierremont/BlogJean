@@ -19,11 +19,14 @@ class Router
             var_dump($_GET['url']);
             //$get=$_GET['get'];
 
-            if ($_GET['chapter'] == 'chapter') {
-                $this->frontcontoller->getChapter($_GET['chapter']);
+            if ($_GET['url'] == 'home' ) {
+                $this->frontcontroller->home();
+            }
+            if ($_GET['url'] == 'chapter' & isset($_GET['id'])) {
+                $this->frontcontroller->getChapter($_GET['id']);
             }
 
-            if ($_GET['addComment'] == 'addComment') {
+/*             if ($_GET['addComment'] == 'addComment') {
                 $this->frontcontoller->addComment();
             }
 
@@ -40,7 +43,7 @@ class Router
             }
 
             if ($_GET['delectCount'] == 'deleteCount') {
-            }
+            } */
         } else {
             $this->frontcontroller->home();
         }
