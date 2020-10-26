@@ -12,24 +12,30 @@ class Chapter
         $this->db = new Database();
     }
 
-    public function getChapters(){
+    public function getChapters()
+    {
         $connection = $this->db->getConnection();
         $query = $connection->query('SELECT id, title, content, author, createdAt, numberChapter FROM article ORDER BY id DESC');
         $result = $query->fetch();
         return $result;
     }
 
-    public function getChapter($chapterID){
+    public function getChapter($chapterID)
+    {
         $connection = $this->db->getConnection();
         $query = $connection->query('SELECT id, title, content, author, createdAt, numberChapter FROM article WHERE id = ' . $chapterID);
         $result = $query->fetch();
         return $result;
     }
 
-    public function getComment(){
+    public function getComment($chapterID)
+    {
         $connection = $this->db->getConnection();
-        $query = $connection->query('SELECT id, title, content, author, createdAt, numberChapter FROM article ORDER BY id DESC');
-        $result = $query->fetch();
-        return $result;
+        $req = $connection->prepare('SELECT id, author, content FROM comment WHERE article_id = ? ORDER BY commentDate DESC');
+        $req->execute(array($chapterID));
+        while($data=$req->fetch()){
+            $comments[]=$data;
+        }
+        return $comments;
     }
 }
