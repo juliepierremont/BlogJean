@@ -21,10 +21,18 @@ class FrontController
         $myView->render(['articles' => $articles]);
     }
 
-    public function getChapter($chapterID){
+    public function getChapter($chapterID)
+    {
         $chapter = $this->chapter->getChapter($chapterID);
+        $comments = $this->chapter->getComment($chapterID);
         $myView = new View('viewChapter');
-        $myView->render(['chapter' => $chapter]);
+        $myView->render([
+            'chapter' => $chapter,
+            'comments' => $comments
+            ]);
     }
-
+    public function addComment($post, $chapterID)
+    {
+        var_dump($post);
+    }
 }
