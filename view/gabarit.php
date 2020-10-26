@@ -31,8 +31,16 @@
 
     </header>
 
-<?= $content; ?>
+    <?= $content; ?>
 
 </body>
+
+<footer>
+
+mon super footer
+
+
+</footer>
+
 
 </html>
