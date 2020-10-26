@@ -1,6 +1,7 @@
 <?php
 
 namespace App\utils;
+
 use \PDO;
 use \Exception;
 
@@ -13,20 +14,14 @@ class Database
 
 
     public function getConnection()
-    
+
     {
-        try{
+        try {
             $connection = new PDO(self::DB_HOST, self::DB_USER, self::DB_PASS);
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $connection;
-        }
-        
-        catch(Exception $errorConnection)
-        {
-            die ('Erreur de connection :'.$errorConnection->getMessage());
-            
+        } catch (Exception $errorConnection) {
+            die('Erreur de connection :' . $errorConnection->getMessage());
         }
     }
-    
-    
 }
