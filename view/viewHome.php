@@ -9,8 +9,11 @@
         <p>Créé le : <?= htmlspecialchars($articles['createdAt']); ?></p>
     </div>
     <br>
-
-    <button onclick="window.location.href = 'http://localhost/BlogJean/index.php?url=chapter&id=1'; "> Lire la suite</button>
-
-
+    <h2>Tous les chapitres</h2>
+    <p>chapitre 1</p>
+    <a href= 'index.php?url=chapter&id=1'; > Lire la suite</a>
+    <p>chapitre 2</p>
+    <a href= 'index.php?url=chapter&id=2'; > Lire la suite</a>
+    <p>chapitre 3</p>
+    <a href= 'index.php?url=chapter&id=3'; > Lire la suite</a>
 </div>
