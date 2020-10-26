@@ -29,10 +29,12 @@ class FrontController
         $myView->render([
             'chapter' => $chapter,
             'comments' => $comments
-            ]);
+        ]);
     }
     public function addComment($post, $chapterID)
     {
-        var_dump($post);
+        if (!empty($post['author']) && !empty($post['comment'])) {
+            $addComment = $this->chapter->addComment($chapterID, $post['author'],$post['comment'] );
+        }
     }
 }
