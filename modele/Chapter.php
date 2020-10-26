@@ -38,4 +38,19 @@ class Chapter
         }
         return $comments;
     }
+
+    public function addComment($id, $author, $content)
+    {
+        $connection = $this->db->getConnection();
+        $req = $connection->prepare('INSERT INTO comment(article_id, author, content, commentDate) VALUES (:article_id, :author, :content, NOW())');
+        $req->execute(array(
+            'article_id' => $id,
+            'author' => $author,
+            'content' => $content
+        ));
+        header('location:index.php?url=chapter&id=' . $id );
+    }
+
+
+
 }
