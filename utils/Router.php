@@ -15,21 +15,19 @@ class Router
     public function run()
     {
         if (isset($_GET['url'])) {
-
-            var_dump($_GET['url']);
             //$get=$_GET['get'];
 
-            if ($_GET['url'] == 'home' ) {
+            if ($_GET['url'] == 'home') {
                 $this->frontcontroller->home();
             }
             if ($_GET['url'] == 'chapter' & isset($_GET['id'])) {
                 $this->frontcontroller->getChapter($_GET['id']);
             }
 
-/*             if ($_GET['addComment'] == 'addComment') {
-                $this->frontcontoller->addComment();
+            if ($_GET['url'] == 'addComment') {
+                $this->frontcontroller->addComment($_POST, $_GET['id']);
             }
-
+           /*
             if ($_GET['connection'] == 'connection') {
             }
 
