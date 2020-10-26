@@ -26,6 +26,7 @@ class Router
 
             if ($_GET['url'] == 'addComment') {
                 $this->frontcontroller->addComment($_POST, $_GET['id']);
+                
             }
            /*
             if ($_GET['connection'] == 'connection') {
