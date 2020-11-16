@@ -4,6 +4,7 @@ namespace App\src\controller;
 
 use App\modele\Article;
 use App\modele\Chapter;
+use App\modele\Connection;
 use App\utils\View;
 
 class FrontController
@@ -12,6 +13,7 @@ class FrontController
     {
         $this->article = new Article();
         $this->chapter = new Chapter();
+        $this->connection = new Connection();
     }
 
     public function home()
@@ -37,4 +39,19 @@ class FrontController
             $addComment = $this->chapter->addComment($chapterID, $post['author'],$post['comment'] );
         }
     }
+
+    public function getConnection()
+    {
+        $myView = new View('viewConnection');
+        $myView->render();
+    }
+
+/*     public function getConnection()
+    {
+        if (!empty($post['login']) && !empty($post['password'])){
+            $connection = $this->connection->getConnection();
+            var_dump($connection);
+        }
+    }
+ */
 }
