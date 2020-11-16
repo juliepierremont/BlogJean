@@ -22,7 +22,7 @@
                     <i class="fas fa-book"></i>
                 </li>
                 <li>
-                    <a href="index.php">"Connexion"</a>
+                    <a href="index.php?url=connexion">"Connexion"</a>
                     <i class="fas fa-sign-in-alt"></i>
                 </li>
 
