@@ -38,6 +38,9 @@ class Router
                     $this->backcontroller->getConnection($_POST);
                 }
             }
+            // if ($_GET['url'] == 'profile')
+            //     $this->backController->profile();
+
             /*
             if ($_GET['register'] == 'register') {
             }
