@@ -2,7 +2,7 @@
 
 namespace App\src\controller;
 
-use App\modele\Article;
+use App\modele\Comment;
 use App\modele\Chapter;
 use App\modele\Connection;
 use App\utils\View;
@@ -13,12 +13,12 @@ class FrontController
     {
         $this->chapter = new Chapter();
         $this->connection = new Connection();
+        $this->comment = new Comment();
     }
 
     public function home()
     {
         $chapters = $this->chapter->getChapters();
-        var_dump($chapters);
         $myView = new View('viewHome');
         $myView->render(['chapters' => $chapters]);
     }
@@ -26,7 +26,7 @@ class FrontController
     public function getChapter($chapterID)
     {
         $chapter = $this->chapter->getChapter($chapterID);
-        $comments = $this->chapter->getComment($chapterID);
+        $comments = $this->comment->getComment($chapterID);
         $myView = new View('viewChapter');
         $myView->render([
             'chapter' => $chapter,
@@ -36,7 +36,7 @@ class FrontController
     public function addComment($post, $chapterID)
     {
         if (!empty($post['author']) && !empty($post['comment'])) {
-            $addComment = $this->chapter->addComment($chapterID, $post['author'],$post['comment'] );
+            $addComment = $this->comment->addComment($chapterID, $post['author'],$post['comment'] );
         }
     }
 
