@@ -16,8 +16,10 @@ class Chapter
     {
         $connection = $this->db->getConnection();
         $query = $connection->query('SELECT id, title, content, author, createdAt, numberChapter FROM article ORDER BY id DESC');
-        $result = $query->fetch();
-        return $result;
+        while ( $result = $query->fetch()){
+            $chapters[] = new ChapterModel($result); 
+        }
+        return $chapters;
     }
 
     public function getChapter($chapterID)
