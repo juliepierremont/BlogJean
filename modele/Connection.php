@@ -37,6 +37,23 @@ class Connection
         return $checkPassword;
     }
 
+    public function checkPassword($checkPassword, $checkUser)
+    {
+        if($checkPassword)
+        {
+            $_SESSION['id'] = $checkUser['id'];
+            $_SESSION['username'] = $checkUser['username'];
+            $_SESSION['email'] = $checkUser['email'];
+            $_SESSION['name'] = $checkUser['name'];
+            $_SESSION['role'] = $checkUser['role'];
+
+            header("Location: index.php");
+        }
+        else
+        {
+            $this->error = "Mauvais identifiant ou mot de passe !";
+        }
+    }
 
 
     // public function createMember(){
