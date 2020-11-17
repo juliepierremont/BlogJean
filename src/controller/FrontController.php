@@ -11,16 +11,16 @@ class FrontController
 {
     public function __construct()
     {
-        $this->article = new Article();
         $this->chapter = new Chapter();
         $this->connection = new Connection();
     }
 
     public function home()
     {
-        $articles = $this->article->getArticles();
+        $chapters = $this->chapter->getChapters();
+        var_dump($chapters);
         $myView = new View('viewHome');
-        $myView->render(['articles' => $articles]);
+        $myView->render(['chapters' => $chapters]);
     }
 
     public function getChapter($chapterID)
