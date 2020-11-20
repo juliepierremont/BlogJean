@@ -1,3 +1,10 @@
+<?php session_start();
+
+if (isset($_SESSION['id']) AND isset($_SESSION['username']))
+{
+    echo 'Bonjour ' . $_SESSION['username'];
+} ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
