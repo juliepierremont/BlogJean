@@ -39,19 +39,17 @@ class Connection
 
     public function checkPassword($checkPassword, $checkUser)
     {
-        if($checkPassword)
-        {
+        if ($checkPassword) {
+            session_start();
             $_SESSION['id'] = $checkUser['id'];
             $_SESSION['username'] = $checkUser['username'];
-            $_SESSION['email'] = $checkUser['email'];
-            $_SESSION['name'] = $checkUser['name'];
-            $_SESSION['role'] = $checkUser['role'];
+            // $_SESSION['email'] = $checkUser['email'];
+            // $_SESSION['name'] = $checkUser['name'];
+            // $_SESSION['role'] = $checkUser['role'];
 
-            header("Location: index.php");
-        }
-        else
-        {
-            $this->error = "Mauvais identifiant ou mot de passe !";
+            header("Location: index.php?url=profile");
+        } else {
+            echo 'Mauvais identifiant ou mot de passe !';
         }
     }
 
@@ -69,7 +67,3 @@ class Connection
     //     ]);
     // }
 }
-
-
-
-
