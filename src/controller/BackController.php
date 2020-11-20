@@ -12,14 +12,12 @@ class BackController
         $this->connection = new Connection();
     }
 
-     public function getConnection($post)
+    public function getConnection($post)
     {
-        if (!empty($post['login']) && !empty($post['password'])){
-            $connection = $this->connection->getConnection($post['login'],$post['password']);
-            var_dump($connection);
+        if (!empty($post['login']) && !empty($post['password'])) {
+            $connection = $this->connection->getConnection($post['login'], $post['password']);
+            $myView = new View('viewProfile');
+            $myView->render();
         }
     }
-
-
-
 }
