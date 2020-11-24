@@ -5,6 +5,7 @@ namespace App\src\controller;
 use App\modele\Comment;
 use App\modele\Chapter;
 use App\modele\Connection;
+use App\modele\EditProfile;
 use App\utils\View;
 
 class FrontController
@@ -14,6 +15,7 @@ class FrontController
         $this->chapter = new Chapter();
         $this->connection = new Connection();
         $this->comment = new Comment();
+        $this->editProfile = new EditProfile();
     }
 
     public function home()
@@ -45,6 +47,35 @@ class FrontController
         $myView = new View('viewConnection');
         $myView->render();
     }
+
+    public function getProfile()
+    {
+        $myView = new View('viewProfile');
+        $myView->render();
+    }
+
+    public function editComment()
+    {
+        $myView = new View('viewEditComment');
+        $myView->render();
+    }
+
+    Public function deleteComment()
+    {
+        $myView = new View('viewDeleteComment');
+        $myView->render();
+    }
+
+
+    Public function editProfile()
+    {
+        $myView = new View('viewEditProfile');
+        $myView->render();
+    }
+
+
+
+
 
 /*     public function getConnection()
     {
