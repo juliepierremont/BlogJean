@@ -38,21 +38,25 @@ class Router
                     $this->backcontroller->getConnection($_POST);
                 }
             }
-            if ($_GET['url'] == 'profile')
-                $this->backController->profile();
+            if ($_GET['url'] == 'admin') {
+                if ($_GET['action'] == 'editComment') {
+                    $this->frontcontroller->editComment();
+                }
 
-            /*
-            if ($_GET['register'] == 'register') {
+
+                if ($_GET['action'] == 'deleteComment') {
+                    $this->frontcontroller->deleteComment();
+                }
+
+
+                if ($_GET['action'] == 'profile') {
+                    $this->frontcontroller->getProfile();
+                }
+
+                if ($_GET['action'] == 'editProfile') {
+                    $this->frontcontroller->editProfile();
+                }
             }
-
-            if ($_GET['administration'] == 'administration') {
-            }
-
-            if ($_GET['disconnection'] == 'disconnection') {
-            }
-
-            if ($_GET['delectCount'] == 'deleteCount') {
-            } */
         } else {
             $this->frontcontroller->home();
         }
