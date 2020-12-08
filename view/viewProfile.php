@@ -13,8 +13,9 @@
 
 <h3>Chapitre</h3>
 <p>Créer une chapitre</p>
-<p>Editer un chapitre</p>
 <p>Supprimer un chapitre</p>
+<p>Editer un chapitre</p>
+
 
 <h3>Mon profil</h3>
 <p> <a href="index.php?url=admin&action=editProfile">Editer mon profil</a></p>
