@@ -29,8 +29,8 @@
                 <button type="submit" name="submit" class="btn btn-primary btn-block">Mettre à jour le profil</button>
             </div>
         </form>
-        <p class="text-center text-danger font-weight-bold style-register-error"><?php if (isset($error)) {
+<!--         <p class="text-center text-danger font-weight-bold style-register-error"><?php if (isset($error)) {
                                                                                         echo $error;
-                                                                                    } ?></p>
+                                                                                    } ?></p> -->
     </div>
 </div>
