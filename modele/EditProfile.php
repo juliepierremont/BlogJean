@@ -24,7 +24,7 @@ class EditProfile
     public function updatePseudo($newPseudo, $id)
     {
         $connection = $this->db->getConnection();
-        $req = $connection->prepare('UPDATE users SET pseudo = ? WHERE id = ?');
+        $req = $connection->prepare('UPDATE users SET username = ? WHERE id = ?');
         $req->execute(array($newPseudo, $id));
         $req->closeCursor();
     }
@@ -36,7 +36,6 @@ class EditProfile
         $req->execute(array($newEmail, $id));
         $req->closeCursor();
     }
-
 
     public function updatePassword($newPassword, $id)
     {
