@@ -14,7 +14,7 @@ class EditProfile
     public function getProfile($id)
     {
         $connection = $this->db->getConnection();
-        $req = $connection->prepare('SELECT id, pseudo, email, DATE_FORMAT(date_inscription, \'%d/%m/%Y\') AS creation_date_fr  FROM members WHERE id = ?');
+        $req = $connection->prepare('SELECT id, username, email, DATE_FORMAT(date_inscription, \'%d/%m/%Y\') AS creation_date_fr  FROM members WHERE id = ?');
         $req->execute(array($id));
         $data = $req->fetch();
         return new Connection($data);
@@ -24,7 +24,7 @@ class EditProfile
     public function updatePseudo($newPseudo, $id)
     {
         $connection = $this->db->getConnection();
-        $req = $connection->prepare('UPDATE members SET pseudo = ? WHERE id = ?');
+        $req = $connection->prepare('UPDATE users SET pseudo = ? WHERE id = ?');
         $req->execute(array($newPseudo, $id));
         $req->closeCursor();
     }
@@ -32,7 +32,7 @@ class EditProfile
     public function updateEmail($newEmail, $id)
     {
         $connection = $this->db->getConnection();
-        $req = $connection->prepare('UPDATE members SET email = ? WHERE id = ?');
+        $req = $connection->prepare('UPDATE users SET email = ? WHERE id = ?');
         $req->execute(array($newEmail, $id));
         $req->closeCursor();
     }
@@ -41,7 +41,7 @@ class EditProfile
     public function updatePassword($newPassword, $id)
     {
         $connection = $this->db->getConnection();
-        $req = $connection->prepare('UPDATE members SET pass = ? WHERE id = ?');
+        $req = $connection->prepare('UPDATE users SET pass = ? WHERE id = ?');
         $req->execute(array($newPassword, $id));
         $req->closeCursor();
     }
