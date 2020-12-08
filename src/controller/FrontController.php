@@ -10,6 +10,7 @@ use App\modele\EditComment;
 use App\modele\DeleteComment;
 use App\modele\CreateChapter;
 use App\modele\DeleteChapter;
+use App\modele\UpdateChapter;
 use App\utils\View;
 
 class FrontController
@@ -24,6 +25,7 @@ class FrontController
         $this->deleteComment = new DeleteComment();
         $this->createChapter = new CreateChapter();
         $this->deleteChapter = new DeleteChapter();
+        $this->updateChapter = new UpdateChapter();
     }
 
     public function home()
@@ -85,6 +87,11 @@ class FrontController
         $myView->render();
     }
 
+    public function updateChapter()
+    {
+        $myView = new View('viewUpdateChapter');
+        $myView->render();
+    }
 
     public function editProfile()
     {
