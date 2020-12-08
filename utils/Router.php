@@ -50,7 +50,10 @@ class Router
                     $this->frontcontroller->createChapter();
                 }
 
-                
+                if ($_GET['action'] == 'updateChapter') {
+                    $this->frontcontroller->updateChapter();
+                }
+
                 if ($_GET['action'] == 'deleteChapter') {
                     $this->frontcontroller->deleteChapter();
                 }
