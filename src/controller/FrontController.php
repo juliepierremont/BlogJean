@@ -6,6 +6,10 @@ use App\modele\Comment;
 use App\modele\Chapter;
 use App\modele\Connection;
 use App\modele\EditProfile;
+use App\modele\EditComment;
+use App\modele\DeleteComment;
+use App\modele\CreateChapter;
+use App\modele\DeleteChapter;
 use App\utils\View;
 
 class FrontController
@@ -16,6 +20,10 @@ class FrontController
         $this->connection = new Connection();
         $this->comment = new Comment();
         $this->editProfile = new EditProfile();
+        $this->editComment = new EditComment();
+        $this->deleteComment = new DeleteComment();
+        $this->createChapter = new CreateChapter();
+        $this->deleteChapter = new DeleteChapter();
     }
 
     public function home()
@@ -38,7 +46,7 @@ class FrontController
     public function addComment($post, $chapterID)
     {
         if (!empty($post['author']) && !empty($post['comment'])) {
-            $addComment = $this->comment->addComment($chapterID, $post['author'],$post['comment'] );
+            $addComment = $this->comment->addComment($chapterID, $post['author'], $post['comment']);
         }
     }
 
@@ -60,16 +68,33 @@ class FrontController
         $myView->render();
     }
 
-    Public function deleteComment()
+    public function deleteComment()
     {
         $myView = new View('viewDeleteComment');
         $myView->render();
     }
 
+    public function createChapter()
+    {
+        $myView = new View('viewCreateChapter');
+        $myView->render();
+    }
+    public function deleteChapter()
+    {
+        $myView = new View('viewDeleteChapter');
+        $myView->render();
+    }
 
-    Public function editProfile()
+
+    public function editProfile()
     {
         $myView = new View('viewEditProfile');
+        $myView->render();
+    }
+
+    public function editChapter()
+    {
+        $myView = new View('viewEditChapter');
         $myView->render();
     }
 
@@ -77,7 +102,7 @@ class FrontController
 
 
 
-/*     public function getConnection()
+    /*     public function getConnection()
     {
         if (!empty($post['login']) && !empty($post['password'])){
             $connection = $this->connection->getConnection();
