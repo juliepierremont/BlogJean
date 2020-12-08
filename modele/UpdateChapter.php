@@ -29,10 +29,17 @@ class UpdateChapter
         return $result;
     }
 
-    public function deleteChapter($chapterID)
+    public function updateChapter($chapterID, $postTitle, $postContent, $postNumberChapter, $postDate)
     {
         $connection = $this->db->getConnection();
-        $req = $connection->prepare('DELETE FRROM article WHERE id = ' .$chapterID);
-        $req->execute(array($chapterID));
+        $req = $connection->prepare('UPDATE article SET title = ? , content = ? , createdAt = ? , numberChapter = ? WHERE id = ' . $chapterID);
+        $req->execute(array(
+            'title' => $postTitle,
+            'content' => $postContent,
+            'numberChapter' => $postNumberChapter,
+            'createdAt' => $postDate,
+
+        ));
+        header('location:index.php?url=chapter&id=' . $postTitle);
     }
 }
