@@ -42,12 +42,18 @@ class Router
                 if ($_GET['action'] == 'editComment') {
                     $this->frontcontroller->editComment();
                 }
-
-
                 if ($_GET['action'] == 'deleteComment') {
                     $this->frontcontroller->deleteComment();
                 }
 
+                if ($_GET['action'] == 'createChapter') {
+                    $this->frontcontroller->createChapter();
+                }
+
+                
+                if ($_GET['action'] == 'deleteChapter') {
+                    $this->frontcontroller->deleteChapter();
+                }
 
                 if ($_GET['action'] == 'profile') {
                     $this->frontcontroller->getProfile();
