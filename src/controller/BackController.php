@@ -26,7 +26,7 @@ class BackController
         if ($checkPassword) {
             $_SESSION['id'] = 1;
             $_SESSION['username'] = $checkUser['login'];
-            // $_SESSION['email'] = $checkUser['email'];
+            //$_SESSION['email'] = $checkUser['email'];
             // $_SESSION['name'] = $checkUser['name'];
             // $_SESSION['role'] = $checkUser['role'];
             header("Location: index.php?url=admin&action=profile");
