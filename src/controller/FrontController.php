@@ -5,12 +5,6 @@ namespace App\src\controller;
 use App\modele\Comment;
 use App\modele\Chapter;
 use App\modele\Connection;
-use App\modele\EditProfile;
-use App\modele\EditComment;
-use App\modele\DeleteComment;
-use App\modele\CreateChapter;
-use App\modele\DeleteChapter;
-use App\modele\UpdateChapter;
 use App\utils\View;
 
 class FrontController
@@ -20,14 +14,7 @@ class FrontController
         $this->chapter = new Chapter();
         $this->connection = new Connection();
         $this->comment = new Comment();
-        $this->editProfile = new EditProfile();
-        $this->editComment = new EditComment();
-        $this->deleteComment = new DeleteComment();
-        $this->createChapter = new CreateChapter();
-        $this->deleteChapter = new DeleteChapter();
-        $this->updateChapter = new UpdateChapter();
     }
-
     public function home()
     {
         $chapters = $this->chapter->getChapters();
@@ -57,55 +44,6 @@ class FrontController
         $myView = new View('viewConnection');
         $myView->render();
     }
-
-    public function getProfile()
-    {
-        $myView = new View('viewProfile');
-        $myView->render();
-    }
-
-    public function editComment()
-    {
-        $myView = new View('viewEditComment');
-        $myView->render();
-    }
-
-    public function deleteComment()
-    {
-        $myView = new View('viewDeleteComment');
-        $myView->render();
-    }
-
-    public function createChapter()
-    {
-        $myView = new View('viewCreateChapter');
-        $myView->render();
-    }
-    public function deleteChapter()
-    {
-        $myView = new View('viewDeleteChapter');
-        $myView->render();
-    }
-
-    public function updateChapter()
-    {
-        $myView = new View('viewUpdateChapter');
-        $myView->render();
-    }
-
-    public function editProfile()
-    {
-        $myView = new View('viewEditProfile');
-        $myView->render();
-    }
-
-    public function editChapter()
-    {
-        $myView = new View('viewEditChapter');
-        $myView->render();
-    }
-
-
 
 
 
