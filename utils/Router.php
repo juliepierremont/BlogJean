@@ -40,31 +40,33 @@ class Router
             }
             if ($_GET['url'] == 'admin') {
                 if ($_GET['action'] == 'editComment') {
-                    $this->frontcontroller->editComment();
+                    $this->backcontroller->editComment();
                 }
                 if ($_GET['action'] == 'deleteComment') {
-                    $this->frontcontroller->deleteComment();
+                    $this->backcontroller->deleteComment();
                 }
 
                 if ($_GET['action'] == 'createChapter') {
-                    $this->frontcontroller->createChapter();
+                    $this->backcontroller->createChapter();
                 }
 
                 if ($_GET['action'] == 'updateChapter') {
-                    $this->frontcontroller->updateChapter();
+                    $this->backcontroller->updateChapter();
                 }
 
                 if ($_GET['action'] == 'deleteChapter') {
-                    $this->frontcontroller->deleteChapter();
+                    $this->backcontroller->deleteChapter();
                 }
 
                 if ($_GET['action'] == 'profile') {
-                    $this->frontcontroller->getProfile();
+                    $this->backcontroller->getProfile();
                 }
 
                 if ($_GET['action'] == 'editProfile') {
-                    $this->frontcontroller->editProfile();
+                    $this->backcontroller->editProfile();
                 }
+
+                
             }
         } else {
             $this->frontcontroller->home();
